@@ -6,6 +6,7 @@ It answers three core questions:
 1. What distinct player archetypes can be identified based on their performance, overall rating, and market valuation? (Clustering)
 2. Which players are the most likely to be transferred in the next season based on their performance, overall rating, and market valuation? (Classification)
 3. Which factor is the best predictor for a player’s market valuation in the future? (Regression)
+
 The analysis combines **FIFA-23 ratings**, **Fantasy Premier League metrics**, and **Transfermarkt data**, applying clustering, classification, and regression techniques. Models include **K-medoids**, **OPTICS**, **Decision Tree**, **Naïve Bayes**, and both **linear and non-linear regression**.
 ## Data Sources
 1. **FIFA-23 Ratings** → player skill attributes [dataset](https://www.kaggle.com/datasets/sanjeetsinghnaik/fifa-23-players-dataset)
