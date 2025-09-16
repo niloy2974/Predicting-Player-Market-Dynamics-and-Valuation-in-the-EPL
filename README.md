@@ -82,7 +82,7 @@ Regression analysis can formulate equations that can predict the market value an
 
 Linear regression was performed using backward elimination to enhance the model by removing features with minimal impact. The initial R-squared value indicates that the features explain 55% of the variance, while the low Durbin-Watson statistic suggests a positive correlation among the residuals. Additionally, the NPP chart's heavy tails indicate the presence of extreme outliers in the residuals. The p-values for MinutesPlayed (0.13) and FantasyScore (0.20) exceed 0.05, suggesting that the null hypothesis (H₀: β₂ = β₄ = 0) cannot be rejected for these features, rendering them insignificant in predicting market value. VIF scores below 5 indicate no multicollinearity, confirming the independence of each feature. The improved model shows no significant differences in the metrics, further supporting FIFARating and GAContribution as more reliable predictors. 
 
-**Linear Regression Equation: MarketValue= -70741889.214 + 1148199.796*FIFARating +1988367.414 * GAContribution**
+**Linear Regression Equation: MarketValue = -70741889.214 + 1148199.796*FIFARating +1988367.414 * GAContribution**
 
 ![NP Plot](https://github.com/niloy2974/Predicting-Player-Market-Dynamics-and-Valuation-in-the-EPL/blob/main/visualisations/NPP%20Plot.png)
 ### Non-linear Regresssion
@@ -90,7 +90,7 @@ Linear regression was performed using backward elimination to enhance the model 
 
 Non-linear regressions were applied to individual features to further determine the best predictors. After running multiple functions on each feature, it is clear that FIFARating yields the highest R-squared value (0.579) using both exponential and growth functions, making it the most reliable predictor. The curve fit below demonstrates a perfect match with the data, while the NPP chart shows a similar pattern to the linear regression. FantasyScore has comparatively higher scores, indicating that linear regression was unsuitable for it, while MinutesPlayed remains insignificant even after applying non-linear regression.
 
-**Exponential Regression Equation: MarketValue= 6043.55 * exp(0.105894 * FIFARating)**
+**Exponential Regression Equation: MarketValue = 6043.55 * exp(0.105894 * FIFARating)**
 
 ![Curve Fit and NPP](https://github.com/niloy2974/Predicting-Player-Market-Dynamics-and-Valuation-in-the-EPL/blob/main/visualisations/Curve%20Fit%20and%20NPP.jpg)
 ## Conclusion
