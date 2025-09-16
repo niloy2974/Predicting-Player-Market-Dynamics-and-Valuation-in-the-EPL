@@ -51,7 +51,7 @@ Although K=2 produced relatively better outcomes across all indices, the elbow c
 
 Cosine proximity performs better in this situation, much like K-medoids do, since the model clusters more individuals with a relatively better Silhouette Index. The iterations suggest that attaining a higher Silhouette Index requires a trade-off between the number of grouped members. By changing the minimum points between 30-60, these iterations were carried out across a range of proximity measurements. Higher values would yield a single cluster, while lower values would result in excessive clusters. The iteration with MinPts=45 and Eps=0.01 is considered ideal for this report, because it accounts for 393 members (68% of the sample) and produces an acceptable Silhouette Index of 0.59.
 
-![Reachability Plot](https://github.com/niloy2974/Predicting-Player-Market-Dynamics-and-Valuation-in-the-EPL/blob/main/visualisations/OPreach_clusters_OPTICS.png)
+![Reachability Plot](https://github.com/niloy2974/Predicting-Player-Market-Dynamics-and-Valuation-in-the-EPL/blob/main/visualisations/Reachability%20Plot.png)
 
 Three separate clusters are represented by the pits seen in the reachability figure, with one cluster having a noticeably larger number of data points. This implies that a significant percentage of underperforming players were successfully found and filtered by the model.
 
