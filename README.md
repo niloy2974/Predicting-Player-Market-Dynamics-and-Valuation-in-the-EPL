@@ -31,3 +31,32 @@ Significant outliers are evident in GAContribution, FantasyScore, and MarketValu
 
 The bar charts above reveal that the dataset predominantly comprises players aged 22–25, with midfielders being the most represented position. The count plot further highlights that player across all positions, except goalkeepers, are primarily within the 22–25 age range. This suggests a preference for more experienced goalkeepers. Midfielders under 21 appear favoured, likely due to forwards and defenders bearing greater responsibilities. The Sankey plot indicates that midfielders under 21 also accounted for most transfers.
 ![Sankey Chart](https://github.com/niloy2974/Predicting-Player-Market-Dynamics-and-Valuation-in-the-EPL/blob/main/visualisations/Relation%20between%20Position%2C%20Age%20Group%20and%20Transfer%20Status.png)
+### Proximity Analaysis
+![Dissimilarity Matrix](https://github.com/niloy2974/Predicting-Player-Market-Dynamics-and-Valuation-in-the-EPL/blob/main/visualisations/Dissimilarity%20Matrix%20Heatmap.png)
+
+The dissimilarity matrix for mixed types is applied here to differentiate players from the upper and lower classes. Cosine similarity outperforms other metrics due to its invariance to highly scaled features and robustness in high-dimensional spaces, making it more suitable for clustering. Jaccard is used for categorical features to address their specific characteristics effectively.
+## Clustering
+### K-medoids Clustering
+By assigning participants to particular clusters, clustering algorithms help uncover unnoticed trends, categorise players based on similarities in important attributes, and forecast future behaviour. K-medoids and OPTICS are employed for clustering in this report. K-medoids provide sturdiness against outliers and efficiently handle mixed data types by clustering around actual data points. Additionally, it works well with non-Euclidean proximities that are relevant to this dataset. On the other hand, OPTICS emphasises concentrated groupings of players who are similar by creating clusters based on density. In datasets with numerous numerical features and outliers, it excels in noise reduction, an area that K-medoids do not address.
+
+![Elbow and Silhouette](https://github.com/niloy2974/Predicting-Player-Market-Dynamics-and-Valuation-in-the-EPL/blob/main/visualisations/Elbow%20Chart%20and%20Silhouette%20Index.jpg)
+
+Cosine proximity is superior at handling numerous features of different magnitudes, as shown by the comparison of Average WCSS and Silhouette Index across different proximity measures. The high Silhouette Index scores and low Average WCSS values imply that cosine proximity produces clusters that are more cohesive and distinct.
+
+![Val K-medoids]()
+
+Although K=2 produced relatively better outcomes across all indices, the elbow chart shows K=3 as the most suited cluster count. Additionally, restricting the research to two clusters would make it more difficult to distinguish top-performing players from average players. As a result, choosing K=3 is more in line with the goal of making a more subtle distinction.
+### Optics Clustering
+![Val Optics]()
+
+Cosine proximity performs better in this situation, much like K-medoids do, since the model clusters more individuals with a relatively better Silhouette Index. The iterations suggest that attaining a higher Silhouette Index requires a trade-off between the number of grouped members. By changing the minimum points between 30-60, these iterations were carried out across a range of proximity measurements. Higher values would yield a single cluster, while lower values would result in excessive clusters. The iteration with MinPts=45 and Eps=0.01 is considered ideal for this report, because it accounts for 393 members (68% of the sample) and produces an acceptable Silhouette Index of 0.59.
+
+![Reachability Plot]()
+
+Three separate clusters are represented by the pits seen in the reachability figure, with one cluster having a noticeably larger number of data points. This implies that a significant percentage of underperforming players were successfully found and filtered by the model.
+
+### Comparison
+![Pairplot Clustering]()
+
+A visual comparison of the two models' clusters demonstrates that OPTICS performs better in this scenario, with more distinct distributions compared to the overlapping clusters in K-medoids. Additionally, OPTICS effectively reduces visible outliers, enhancing the clarity and reliability of the clustering results.
+## Classification
