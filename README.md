@@ -8,6 +8,6 @@ It answers three core questions:
 3. Which factor is the best predictor for a player’s market valuation in the future? (Regression)
 The analysis combines **FIFA-23 ratings**, **Fantasy Premier League metrics**, and **Transfermarkt data**, applying clustering, classification, and regression techniques. Models include **K-medoids**, **OPTICS**, **Decision Tree**, **Naïve Bayes**, and both **linear and non-linear regression**.
 ## Data Sources
-1. **FIFA-23 Ratings** → player skill attributes
-2. **Fantasy Premier League (FPL)** → in-game performance metrics
-3. **Transfermarkt** → transfer activity and market values 
+1. **FIFA-23 Ratings** → player skill attributes [dataset](https://www.kaggle.com/datasets/sanjeetsinghnaik/fifa-23-players-dataset)
+2. **Fantasy Premier League (FPL)** → in-game performance metrics [dataset](https://www.kaggle.com/datasets/meraxes10/fantasy-premier-league-dataset-2022-2023)
+3. **Transfermarkt** → transfer activity and market values [dataset](https://www.kaggle.com/datasets/davidcariboo/player-scores?select=player_valuations.csv)
